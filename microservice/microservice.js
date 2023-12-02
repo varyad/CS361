@@ -12,13 +12,13 @@ app.post('/data', (req, res) => {
     const { buyPrice } = req.body;
     const { sellPrice} = req.body;
 
-    let margin = (sellPrice - buyPrice)
+    let margin = (sellPrice - buyPrice);
     
     //tax if sellPrice is greater than 100
     if (sellPrice > 100) {
-        margin = (sellPrice - buyPrice) - (Math.min(5000000, buyPrice * 0.01))
+        margin = (sellPrice - buyPrice) - (Math.min(5000000, buyPrice * 0.01));
     }
-    const roi = margin / buyPrice
+    const roi = margin / buyPrice;
 
     //return margin and roi as json 
     res.json({
